@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
 
-  const [name, setName] = useState();
+  const [name, setName] = useState("Ello");
 
   fetch("/people")
   .then(res => res.json())
@@ -12,6 +12,8 @@ function App() {
     setName(data);
     console.log(name);
     console.log(data);
+    console.log(name.name);
+
   });
 
   return (
@@ -19,7 +21,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hello
+          {name.name}
         </p>
         <a
           className="App-link"
