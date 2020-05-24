@@ -8,14 +8,18 @@ function App() {
 
   fetch("/people")
   .then(res => res.json())
-  .then(data => setName(data));
+  .then((data) => {
+    setName(data);
+    console.log(name);
+    console.log(data);
+  });
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          {name.name}
+          Hello
         </p>
         <a
           className="App-link"
