@@ -1,0 +1,12 @@
+.login_main_container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.login_container {
+    width: 70%;
+    height: 70%;
+    background-color: rgba(0,0,0,0.6);
+}

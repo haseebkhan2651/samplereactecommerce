@@ -1,28 +1,26 @@
+//Structure of ECommerce 
+//First Thing Displayed is Sign In Page
+
+
+
+
 import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+//React Components Start
+
+import Login_Page from "./components/login_page/Login";
+
+//React Components End
+
 
 function App() {
-
-  const [name, setName] = useState("Ello");
-
-  fetch("/people")
-  .then(res => res.json())
-  .then((data) => {
-    setName(data);
-    console.log(name);
-    console.log(data);
-    console.log(name.name);
-
-  });
+ 
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p>This is an ecommerce project made by {name.name} </p>
-      </header>
+      <Login_Page />
     </div>
   );
 }
 
 export default App;
+
