@@ -1,0 +1,17 @@
+.display_navbar_container {
+    width: 100%;
+    position: relative;
+    height: 5vh;
+}
+
+.display_ul {
+    display: inline;
+    position: absolute;
+    left: 10%;
+}
+.display_li {
+    display: inline;
+    font-size: 20px;
+    margin-left: 160px;
+    text-transform: uppercase;
+}

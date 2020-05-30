@@ -1,0 +1,20 @@
+.newsletter_section_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    height: 20vh;
+}
+
+.newsletter_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.newsletter_container input {
+    padding: 10px;
+    border:none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
