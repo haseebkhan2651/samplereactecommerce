@@ -28,9 +28,6 @@ const User = mongoose.model("User", UserSchema);
 app.use(express.static(path.join(__dirname, "build")));
 app.use(bodyParser.urlencoded({extended: true}));
 
-// app.get("*", function(req, res) {
-//     res.sendFile(path.join(__dirname+"/build/index.html"));
-// });
 
 
 app.get("/redirect", function(req,res) {
@@ -103,6 +100,10 @@ app.post("/create-an-account", (req,res) => {
 
     
 }); 
+
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname+"/build/index.html"));
+});
 
 
 let port = process.env.PORT;
