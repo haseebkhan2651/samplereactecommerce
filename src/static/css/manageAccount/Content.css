@@ -1,0 +1,78 @@
+body {
+    background-color: rgb(245, 245, 245);
+}
+.manage_account_container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.manage_account_inner_div {
+    width: 80%;
+    height: 90%;
+}
+
+.manage_account_inner_div h1 {
+    text-align: center;
+    font-size: 70px;
+    padding: 50px;
+}
+.account_display_data {
+    height: 70%;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.account_display_data div:nth-child(1) {
+    background-color: #AEADF0;
+    width: 40%;
+    height: 55%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.account_display_data div:nth-child(1) h2{
+    margin-top: 10px;
+    font-size: 35px;
+    color: black;
+}
+
+.account_display_data div:nth-child(1) h2:nth-child(3) {
+    margin-top: 10px;
+}
+.account_display_data div:nth-child(2) {
+    background-color: #D8DCFF;
+    width: 40%;
+    height: 55%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.account_display_data div:nth-child(2) h2 {
+    margin-top: 10px;
+    font-size: 35px;
+    color: black;
+}
+.additional_info {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.additional_info a {
+    margin-left: 20px;
+}
+.back_button {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+}

@@ -9,7 +9,7 @@ const ProductCard = (props) => {
             <div className={props.imageClassName}></div>
             
             <div className="buttonContainer">
-                <Button> {props.buttonName} </Button>
+                <Button onClick={props.linkChangeFunc} > {props.buttonName} </Button>
             </div>
           
         </div>

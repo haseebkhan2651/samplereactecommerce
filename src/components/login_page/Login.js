@@ -4,7 +4,7 @@
     2). Make sure the session store is not memory store there is a mongodb styor inside of express-session docs
     3). FOCUS!!!
 
-    //TRY AGAIN WITH THE ERROR MESSAGE DISAPPEAR FUNCTION LATER
+            //TRY AGAIN WITH THE ERROR MESSAGE DISAPPEAR FUNCTION LATER
  */
 
 import React, { useState } from "react";
@@ -20,14 +20,20 @@ const Login = (props) => {
     
     const error_message_appear = () => {
         let error_message = document.getElementsByClassName("error_message")[0];
-        error_message.style.display = "block";
+        if(error_message) {
+            error_message.style.display = "block";
+        } 
+
     }
 
     const error_message_disappear = () => {
         setInterval(() => {
             let error_message = document.getElementsByClassName("error_message")[0];
-            
-            error_message.style.opacity = 0;
+            if(error_message) {
+                error_message.style.opacity = 0;
+                error_message.style.display = "none";
+            }
+
         
         },6000);
     }
@@ -45,7 +51,7 @@ const Login = (props) => {
                     setErrorMessage("Sorry your login credentials didn't match up with our records. Please try again or create an account");
                     setColor("danger");
                     error_message_appear();
-           
+                    error_message_disappear();
                 break;
             case "null":
                 setErrorMessage("");
@@ -56,6 +62,13 @@ const Login = (props) => {
                 setErrorMessage("Your username or password are invalid please try again");
                 setColor("warning");
                 error_message_appear();
+                error_message_disappear();
+                break;
+            case "new account created": 
+                setErrorMessage("Congrats! Your account has been created please login.");
+                setColor("success");
+                error_message_appear();
+                error_message_disappear();
                 break;
             default:
                 setErrorMessage("");

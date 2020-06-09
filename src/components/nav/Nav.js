@@ -17,6 +17,7 @@ const Header = (props) => {
                     <Nav.Link className="navLinks" href="#"> T-Shirts </Nav.Link>
                     <Nav.Link className="navLinks" href="#"> Shoes </Nav.Link>
                     <Nav.Link className="navLinks" href="#"> Watches </Nav.Link>
+                    <Nav.Link className="navLinks" href="/manage-account"> Manage My Account </Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

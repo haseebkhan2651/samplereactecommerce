@@ -24,6 +24,7 @@ const Main_Content = () => {
             <Copyright />
         </Fragment>
     );
+
 }
 
 export default Main_Content;
