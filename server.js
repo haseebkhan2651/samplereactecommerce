@@ -485,6 +485,6 @@ app.post("/create-an-account", (req,res) => {
 
 let port = process.env.PORT;
 
-app.listen(port || 5000, () => {
-    console.log("Server has been started successfully");
+app.listen(port, () => {
+    console.log("Server has been started successfully " + port);
 });
