@@ -120,7 +120,7 @@ const FinalPriceSchema = new mongoose.Schema({
 const FinalPrice = mongoose.model("finalPrice", FinalPriceSchema);
 
 
-// app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "build")));
 app.use(session({secret: "TEO IS THE BEST ELLO SECRET KEY", 
 cookie: { maxAge: 8*60*60*1000 },
 resave: false ,
@@ -131,9 +131,9 @@ store: new MongoStore({mongooseConnection: mongoose.connection})
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-// app.get("*", function(req, res) {
-//     res.sendFile(path.join(__dirname+"/build/index.html"));
-// });
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname+"/build/index.html"));
+});
 
 
 

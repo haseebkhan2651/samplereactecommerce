@@ -17,6 +17,8 @@ const Cart = () => {
     //Working SOlution for quantity update and final price
     const [userQuantity, setUserQuantity] = useState();
 
+    const [addedDiscount, setAddedDiscount] = useState(false);
+
     //Callback function to child component to grab qty and cartID (meaning the cart the user clicks on)
     const getFinalPrice = (qty, cart_id) => {
         setCartId(cart_id);
@@ -59,6 +61,12 @@ const Cart = () => {
     //Working solution for quantity update and final price
 
     const [userEmail, setUserEmail] = useState("");
+
+    const [showDiscountModal, setShowDiscountModal] = useState(false);
+
+    const [showDiscountErrorModal, setShowDiscountErrorModal] = useState(false);
+
+    const [discountState, setDiscountState] = useState();
 
     const [showModal, setShowModal] = useState(false);
 
@@ -111,6 +119,18 @@ const Cart = () => {
     }, []);
     
 
+    //Function that handles discount click
+
+    const handleDiscountClick = () => {
+        setShowDiscountModal(true);
+    }
+
+    //Function that changes discount state whenever value is enter
+    const handleDiscountChange = (e) => {
+        setDiscountState(e.target.value);
+        console.log(discountState);
+    }
+
     
     //Function for deleting an item from your Cart
     const handleClick = (id) => {
@@ -125,6 +145,21 @@ const Cart = () => {
     }
 
 
+    const handleDiscountSubmit = () => {
+        if(addedDiscount) {
+            setShowDiscountModal(false);
+            setShowDiscountErrorModal(true);
+        }
+        if(discountState === "50OFF") {
+            // setNewCheckoutPrice((state) => state*0.5);
+            // new_checkout_price = new_checkout_price * 0.5;
+            setAddedDiscount(true);
+            setShowDiscountModal(false);
+           
+        }
+    }
+
+
     const handleChange = (id,index, e) => {
         
         let array_index = index;
@@ -135,6 +170,9 @@ const Cart = () => {
 
 
     }
+
+
+
    const handleModalClose = () => {
     setShowModal(false);
     axios.post("/eraseCart")
@@ -166,7 +204,8 @@ const Cart = () => {
     transporter.sendMail(message);
 
     window.location.href="/";
-    }
+    
+}
 
 
 
@@ -177,6 +216,37 @@ const Cart = () => {
         return (
             <Fragment>
        
+            {/* Discount Modal */}
+
+        <Modal show={showDiscountModal} onHide={() => setShowDiscountModal(false)}>
+        <Modal.Header closeButton>
+        <Modal.Title>Enter your discount code</Modal.Title>
+        </Modal.Header>
+        <Modal.Body style={{textAlign:"center"}} > <input placeholder="Enter Code" onChange={handleDiscountChange} />  </Modal.Body>
+        <Modal.Footer>
+        <Button variant="danger" onClick={() => setShowDiscountModal(false)}>
+        Close
+        </Button>
+        <Button variant="secondary" onClick={handleDiscountSubmit}>
+        Submit
+        </Button>
+        </Modal.Footer>
+        </Modal>
+
+        {/* DISCOUNT ERROR MODAL */}
+
+        <Modal show={showDiscountErrorModal} onHide={() => setShowDiscountErrorModal(false)}>
+        <Modal.Header closeButton>
+        <Modal.Title>You have already used this code!</Modal.Title>
+        </Modal.Header>
+        <Modal.Footer>
+        <Button variant="danger" onClick={() => setShowDiscountErrorModal(false)}>
+        Close
+        </Button>
+
+        </Modal.Footer>
+        </Modal>
+
             {/* Approval Modal */}
        <Modal show={showModal} onHide={handleModalClose}>
         <Modal.Header closeButton>
@@ -204,8 +274,9 @@ const Cart = () => {
     </Modal.Footer>
     </Modal>
             <Nav />
-
+            <marquee>                <p> Please note that this is not a real eCommerce store this is a demonstration for development purposes. I hope you enjoyed this application! </p> </marquee>
            <div className="shopping_cart_main_container">
+
                <div className="shopping_cart_part_one">
                    
                    <div className="shopping_cart_info_part1_container">
@@ -249,6 +320,7 @@ const Cart = () => {
                     <div className="shopping_cart_part_two_inner">
                         <h3> Final Order </h3>
                         <hr />
+                        <div className="item_loop">
                         {
                             cartItems.map((item, index) => {
                                 index = item._id;
@@ -265,6 +337,9 @@ const Cart = () => {
 
                                 new_checkout_price += updated_price;
                                 
+                                
+                                
+
                                 // complete_final_price.push(updated_price);
 
                                 // getReducedValue();
@@ -276,23 +351,27 @@ const Cart = () => {
                         }
                         
 
+                      
+
+                        </div>
                         
 
                         {/* <FinalCart price={updatedPrice} /> */}
-                        <div className="price_total_container">
+                        <div  className="price_total_container">
                             <div className="price_div">
                                 <p> TOTAL: </p>
-                                <p> ${new_checkout_price} </p>
-                                
+                                <p> ${addedDiscount ? ( new_checkout_price*=0.5 ) : (new_checkout_price) } </p>
+                              
                             </div>
-                            <div onMouseEnter={() => updateFinalPriceFromDatabase(new_checkout_price)} className="paypal_container">
+                            <div onMouseEnter={() => updateFinalPriceFromDatabase(new_checkout_price)} style={{flexDirection: "column"}} className="paypal_container">
+                                <p > <a onClick={handleDiscountClick} href="#"> Got a discount code? </a> </p>
                                 <PayPal amount={newCheckoutPrice} callback={callback} />
                             </div>
                         </div>
                     </div>
                </div>
            </div>
-            <Footer />
+           
             </Fragment>
         )
     } else {

@@ -16,7 +16,7 @@ const Watch = () => {
     useEffect(() => {
         axios.get("/product/watch")
         .then(res => {
-            console.log(res);
+           setWatch(res.data);
         })
     }, [])
 

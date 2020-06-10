@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../../static/css/resusable/Button.css";
 
 const Button = (props) => {
 
@@ -15,7 +15,7 @@ const Button = (props) => {
     }
 
     return (
-        <button onClick={props.onClick} style={{ ...styles.button, ...props.style }} > {props.children} </button>
+        <button onClick={props.onClick} className="button" style={{ ...styles.button, ...props.style }} > {props.children} </button>
     );
 }
 

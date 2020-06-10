@@ -12,12 +12,12 @@ const Display = (props) => {
 
         }
     }
-
-    const [isAddedToCart, setIsAddedToCart] = useState(false);
+    let isAddedToCart = false;
+    // const [isAddedToCart, setIsAddedToCart] = useState(false);
 
     const [showModal, setShowModal] = useState(false);
 
-    const [showErorModal, setShowErrorModal] = useState(false);
+    const [showErrorModal, setShowErrorModal] = useState(false);
 
     const [product, setProduct] = useState([]);
 
@@ -46,23 +46,22 @@ const Display = (props) => {
     const handleClick = (id) => {
         let product_id = id;
 
-        if(isAddedToCart) {
-            setShowErrorModal(true);
-        } else {
-            setShowModal(true);
-        }
-
-
         let url = `/add-to-cart/${product_id}`;
         
         axios.post(url)
         .then(res => {
-
             console.log(res);
             if(res.data === "Sorry you have already added this item to cart") {
-                alert("Sorry you have already added this item to your cart");
+                setShowErrorModal(true);
+            } else {
+                setShowModal(true);
             }
         })
+
+      
+
+
+   
     }
 
     const handleModalClose = () => {
@@ -86,7 +85,7 @@ const Display = (props) => {
     </Modal>
 
         {/* ERROR MODAL */}
-       <Modal show={showModal} onHide={handleModalClose}>
+       <Modal show={showErrorModal} onHide={handleModalClose}>
         <Modal.Header closeButton>
             <Modal.Title> You have already added this item to cart. </Modal.Title>
         </Modal.Header>

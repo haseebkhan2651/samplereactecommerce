@@ -47,12 +47,7 @@ const Content = () => {
             <div className="manage_account_inner_div">
                 <h1> Good {greeting}, {username} </h1>
                 <div className="account_display_data"> 
-                    <div>
-                        <h2>You Have: </h2>
-                        <h2> 6 </h2>
-                        <h2> Orders </h2>
-                    </div>
-                    <div>
+                    <div className="manage_account_shopping_cart">
                         <h2> Your Shopping Cart Has: </h2>
                         <h2> {cartLength} </h2>
                         <h2> Items </h2>

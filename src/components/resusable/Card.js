@@ -44,11 +44,11 @@ const Card = (props) => {
                 <div className="card_image_div" style={{ backgroundImage: `url(${background})`}} ></div>
                 <div style={styles.priceArea} >
                     <div>
-                         <p style={{...styles.textWeight, ...styles.pTag}} >{props.productName}</p> 
+                         <p className="card_product_name" style={{...styles.textWeight, ...styles.pTag}} >{props.productName}</p> 
                         <p style={{fontWeight: "700"}}> Price: {"$"+props.price} </p>
                     </div>
                     <div>
-                        <p> <Button onClick={props.onClick} style={{...styles.addToCartButton, ...props.buttonStyle}} > Add to cart </Button> </p>
+                        <p className="add_to_cart_button_container"> <Button onClick={props.onClick} style={{...styles.addToCartButton, ...props.buttonStyle}} > Add to cart </Button> </p>
                     </div>
                 </div> 
             </div>

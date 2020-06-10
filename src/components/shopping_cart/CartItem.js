@@ -41,8 +41,8 @@ const CartItem = (props) => {
             </div>
             <div className="price_tag_container">
                 <p> ${price} </p>
-                <div onClick={props.onClick} className="remove_container">
-                <p> <a  href="#"> Remove </a> </p>
+                <div className="remove_container">
+                <p> <a onClick={props.onClick.bind(this, props.id)} href="#"> Remove </a> </p>
                 </div>
 
             </div>

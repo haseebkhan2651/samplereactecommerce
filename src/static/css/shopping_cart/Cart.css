@@ -150,3 +150,115 @@
 .price_div p:nth-child(2) {
     
 }
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+    
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    .shopping_cart_main_container {
+    }
+    .shopping_cart_info_part1_container h1 {
+        font-size: 30px;
+    }
+    .shopping_cart_part_two_inner {
+        margin-top: 100px;
+    }
+    .top_panel_part_one p {
+        font-size: 16px;
+    }
+    .shopping_cart_part_two_inner h3 {
+        font-size: 19px;
+    }
+    .qty_tag_container input {
+        position: relative;
+        right: 40px;
+        bottom: 5px;
+    }
+    .top_panel {
+        display:none;
+    }
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    .shopping_cart_main_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .shopping_cart_part_two_inner h3 {
+        display: none;
+    }
+    .shopping_cart_part_two_inner hr {
+        display: none;
+    }
+    .shopping_cart_part_one {
+        width: 100%;
+    }
+    .top_panel {
+        display: none;
+    }
+    .item_loop {
+        display: none;
+    }
+    .shopping_cart_part_two {
+        width: 100%;
+    }
+    .shopping_cart_info_part1_container h1 {
+        font-size: 25px;
+    }
+    .qty_tag_container input {
+        position: relative;
+        right: 40px;
+    }
+  }
