@@ -17,6 +17,7 @@
     border:none;
     outline: none;
     border-bottom: 1px solid black;
+    background-color: #EEEdE9;
 }
 
 @media (min-width: 1281px) {

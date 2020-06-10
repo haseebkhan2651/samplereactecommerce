@@ -40,7 +40,7 @@ let user_inputs = {
 
 var result_array = [];
 
-const mongodb_atlas_connection = 'mongodb+srv://haseeb:khan123@dentalcluster-sdul0.mongodb.net/test?retryWrites=true&w=majority';
+// const mongodb_atlas_connection = 'mongodb+srv://haseeb:khan123@dentalcluster-sdul0.mongodb.net/test?retryWrites=true&w=majority';
 
 let session_status = {
     status: "not verified",
@@ -53,7 +53,7 @@ console.log(status);
 
 console.log(session_status);
 
-const connection = mongoose.connect("mongodb://localhost:27017", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+const connection = mongoose.connect('mongodb+srv://haseeb:khan123@dentalcluster-sdul0.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 
             //Shopping Cart Schema

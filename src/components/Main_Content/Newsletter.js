@@ -32,8 +32,8 @@ const Newsletter = () => {
             <div className="newsletter_section_container">
                 <div className="newsletter_container">
                     <h4>Sign up for our newsletter to receive special offers, new products and more!</h4>
-                    <input type="text" placeholder="Enter you email address" />
-                    <ReButton onClick={handleClick} style={{width: '25%', backgroundColor: "white", color: "black", outline: "none"}}>Sign Up</ReButton>
+                    <input type="text" placeholder="Enter you email address" className="newsLetterInput" />
+                    <ReButton onClick={handleClick} style={{width: '25%', backgroundColor: "#EEEDE9", color: "black", outline: "none"}}>Sign Up</ReButton>
                 </div>
             </div>
         </Fragment>
