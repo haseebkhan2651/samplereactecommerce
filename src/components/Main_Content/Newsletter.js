@@ -1,10 +1,13 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import "../../static/css/main_content/Newsletter.css";
 import ReButton from "../resusable/Button";
 import { Modal, Button } from "react-bootstrap";
+import axios from "axios";
 
 const Newsletter = () => {
     
+    const [res, setRes] = useState();
+
     const [showModal, setShowModal] = useState(false);
 
     const handleModalClose = () => {
@@ -14,6 +17,13 @@ const Newsletter = () => {
     const handleClick = () => {
         setShowModal(true);
     }
+
+    useEffect(() => {
+        axios.get("/people")
+        .then(res => {
+            setRes(res.data.hello);
+        })
+    })
 
     return (
         <Fragment>
@@ -31,6 +41,7 @@ const Newsletter = () => {
       </Modal>
             <div className="newsletter_section_container">
                 <div className="newsletter_container">
+                    <h2> {res} </h2>
                     <h4>Sign up for our newsletter to receive special offers, new products and more!</h4>
                     <input type="text" placeholder="Enter you email address" className="newsLetterInput" />
                     <ReButton onClick={handleClick} style={{width: '25%', backgroundColor: "#EEEDE9", color: "black", outline: "none"}}>Sign Up</ReButton>
