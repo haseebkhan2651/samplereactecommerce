@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./Button";
 import axios from "axios";
 import "../../static/css/resusable/Card.css";
+import path from "path";
 
 const styles = {
     Card: {
@@ -36,7 +37,9 @@ const styles = {
 
 const Card = (props) => {
 
-    let background = `../../static/images/clothes/${props.image}`;
+    // let background = `../../static/images/clothes/${props.image}`;
+
+    let background = path.join(__dirname, "static", 'images', 'clothes', props.image);
 
     return(
             <div style={{...styles.Card, ...props.style}}>
