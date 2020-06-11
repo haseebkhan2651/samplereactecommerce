@@ -6,9 +6,12 @@ const passwordHash = require("password-hash");
 const session = require("express-session");
 const multer = require('multer');
 
+
+
+
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, path(__dirname + '/src/static/images/clothes'))
+      cb(null, path.join(__dirname, "src", "static", "images", "clothes"))
     },
     filename: function (req, file, cb) {
       cb(null, file.originalname)
