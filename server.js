@@ -56,6 +56,7 @@ console.log(session_status);
 const connection = mongoose.connect('mongodb+srv://haseeb:khan123@dentalcluster-sdul0.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 
+
             //Shopping Cart Schema
 const ShoppingCartSchema = new mongoose.Schema({
     name: String,
