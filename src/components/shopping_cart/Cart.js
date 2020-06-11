@@ -299,13 +299,13 @@ const Cart = () => {
                     {
                         cartItems.map((item, index) => {
                             
-                            let background = require(`../../static/images/clothes/${item.image}`);
+                            // let background = require(`../../static/images/clothes/${item.image}`);
                             return (
                                 <CartItem 
                                 grabPrice={getFinalPrice}
                                 id={item._id}
                                 onChange={handleChange.bind(this, item._id, index)}
-                                background={{backgroundImage: `url(${background})`}} 
+                                
                                 title={item.name}
                                 price={item.price}
                                 onClick={handleClick}
