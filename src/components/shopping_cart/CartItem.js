@@ -32,7 +32,7 @@ const CartItem = (props) => {
                 <hr />
             <div className="inner_panel">
             <div className="cart_item">
-            <div style={{...props.background}} className="cart_image"></div>
+            {/* <div style={{...props.background}} className="cart_image"></div> */}
             <div className="item_name">
                 <p> {props.title} </p>
             </div>
