@@ -232,10 +232,10 @@ app.post("/admin/add-product", upload.single('image') ,function(req,res) {
 
     if(product.save()) {
 
-        res.send(true);
+        res.redirect("/admin/add-product");
 
     } else {
-        res.send(false);
+        res.redirect("/admin/add-product");
     }
 
 });
