@@ -41,7 +41,7 @@ const Card = (props) => {
     // import Background from  `../../static/images/clothes/${props.image}`;
     // let background = path.join(__dirname, "static", 'images', 'clothes', props.image);
 
-    let background = require(path.join(__dirname, "static", "images", "clothes", props.image));
+    let background = require(path.join(__dirname, "build", props.image));
 
     return(
             <div style={{...styles.Card, ...props.style}}>
