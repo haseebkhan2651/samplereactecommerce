@@ -1,12 +1,10 @@
 import React, { Fragment, useState } from "react";
 //Components Import Start
-import path from "path";
-
-import Display from path(__dirname + "src/components/products/display/Display");
-import Sidebar from path(__dirname + "src/components/products/sidebar/Sidebar");
-import Nav from path(__dirname + "src/components/products/navbar/Nav");
-import Main_Nav from path(__dirname + "src/components/nav/Nav");
-import Header from path(__dirname + "src/components/slideshow/Slideshow");
+import Display from "./display/Display";
+import Sidebar from "./sidebar/Sidebar";
+import Nav from "./navbar/Nav";
+import Main_Nav from "../nav/Nav";
+import Header from "../slideshow/Slideshow";
 import axios from "axios";
 
 //Components Import End
