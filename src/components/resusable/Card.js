@@ -3,7 +3,6 @@ import Button from "./Button";
 import axios from "axios";
 import "../../static/css/resusable/Card.css";
 import path from "path";
-import ImageURL from `../../static/images/clothes/${props.image}`;
 
 const styles = {
     Card: {
@@ -42,11 +41,11 @@ const Card = (props) => {
     // import Background from  `../../static/images/clothes/${props.image}`;
     // let background = path.join(__dirname, "static", 'images', 'clothes', props.image);
 
-    let background = require(path.join(__dirname, "build", props.image));
+    // let background = require(path.join(__dirname, "build", props.image));
 
     return(
             <div style={{...styles.Card, ...props.style}}>
-                <div className="card_image_div" style={{ backgroundImage: `url(${ImageURL})`}} ></div>
+                {/* <div className="card_image_div" style={{ backgroundImage: `url(${ImageURL})`}} ></div> */}
                 <div style={styles.priceArea} >
                     <div>
                          <p className="card_product_name" style={{...styles.textWeight, ...styles.pTag}} >{props.productName}</p> 
