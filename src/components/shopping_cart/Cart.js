@@ -281,21 +281,7 @@ const Cart = () => {
                    
                    <div className="shopping_cart_info_part1_container">
                         <h1> Your Shopping Cart </h1>
-                        <hr />
-                       <div className="top_panel">
-                            
-                            <div className="top_panel_part_one">
-                                <p> Product </p>
-                            </div>
-                            <div className="top_panel_part_two">
-                                <p> Quantity </p>
-                            </div>
-                            <div className="top_panel_part_three">
-                                <p> Product Price </p>
-                            </div>
-
-                       </div>
-
+  
                     {
                         cartItems.map((item, index) => {
                             
