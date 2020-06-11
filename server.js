@@ -131,9 +131,7 @@ store: new MongoStore({mongooseConnection: mongoose.connection})
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-// app.get("*", function(req, res) {
-//     res.sendFile(path.join(__dirname+"/build/index.html"));
-// });
+
 
 app.get("/people", (req,res) => {
     let people = {
@@ -488,7 +486,9 @@ app.post("/create-an-account", (req,res) => {
     
 }); 
 
-
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname+"/build/index.html"));
+});
 
 let port = process.env.PORT;
 
