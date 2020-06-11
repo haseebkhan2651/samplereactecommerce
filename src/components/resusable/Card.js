@@ -36,12 +36,11 @@ const styles = {
 
 const Card = (props) => {
 
-
-    let background = require("../../static/images/clothes/" + props.image);
+    let background = `../../static/images/clothes/${props.image}`;
 
     return(
             <div style={{...styles.Card, ...props.style}}>
-                {/* <div className="card_image_div" style={{ backgroundImage: `url(${background})`}} ></div> */}
+                <div className="card_image_div" style={{ backgroundImage: `url(${background})`}} ></div>
                 <div style={styles.priceArea} >
                     <div>
                          <p className="card_product_name" style={{...styles.textWeight, ...styles.pTag}} >{props.productName}</p> 
