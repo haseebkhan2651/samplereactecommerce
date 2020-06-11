@@ -36,62 +36,62 @@ function App() {
 
 
   return (
-    // <Router>
-    //   <div className="App">
-    //     <Switch>
-    //       <Route path="/admin/add-product" >
-    //         <AddProduct />
-    //       </Route>
-    //       <Route path="/admin/orders" >
-    //         <AdminOrders />
-    //       </Route>
-    //     <Route path="/admin/products" >
-    //       <AdminProducts />
-    //     </Route>
-    //     <Route path="/admin/users" >
-    //         <AdminUsers />
-    //       </Route>
-    //       <Route path="/admin" >
-    //         <Admin />
-    //       </Route>
-    //       <Route path="/admin-login" >
-    //         <Admin_login />
-    //       </Route>
-    //       <Route path="/manage-account" >
-    //         <ManageAccount />
-    //       </Route>
-    //       <Route path="/shopping-cart" >
-    //           <Cart />
-    //       </Route>
-    //       <Route path="/products/shirts" >
-    //           <Shirts />
-    //       </Route>
-    //       <Route path="/products/watches" > 
-    //           <Watches />
-    //       </Route>  
-    //       <Route path="/products/coats" > 
-    //           <Coats />
-    //       </Route>
-    //       <Route path="/products/shoes">
-    //         <Shoes />
-    //       </Route>
-    //       <Route path="/products">
-    //         <Product />
-    //       </Route>
-    //       <Route path="/login">  <Login_Page /> </Route>
-    //       <Route path="/create-an-account"> <Create /> </Route>
-    //       <Route path="/">
-    //        
-    //       </Route>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/admin/add-product" >
+            <AddProduct />
+          </Route>
+          <Route path="/admin/orders" >
+            <AdminOrders />
+          </Route>
+        <Route path="/admin/products" >
+          <AdminProducts />
+        </Route>
+        <Route path="/admin/users" >
+            <AdminUsers />
+          </Route>
+          <Route path="/admin" >
+            <Admin />
+          </Route>
+          <Route path="/admin-login" >
+            <Admin_login />
+          </Route>
+          <Route path="/manage-account" >
+            <ManageAccount />
+          </Route>
+          <Route path="/shopping-cart" >
+              <Cart />
+          </Route>
+          <Route path="/products/shirts" >
+              <Shirts />
+          </Route>
+          <Route path="/products/watches" > 
+              <Watches />
+          </Route>  
+          <Route path="/products/coats" > 
+              <Coats />
+          </Route>
+          <Route path="/products/shoes">
+            <Shoes />
+          </Route>
+          <Route path="/products">
+            <Product />
+          </Route>
+          <Route path="/login">  <Login_Page /> </Route>
+          <Route path="/create-an-account"> <Create /> </Route>
+          <Route path="/">
+            <Main />
+          </Route>
 
 
-    <Main />
 
-        // </Switch>
+
+        </Switch>
 
         
-      // </div>
-    // </Router>
+      </div>
+    </Router>
   );
 }
 
