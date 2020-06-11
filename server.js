@@ -131,9 +131,9 @@ store: new MongoStore({mongooseConnection: mongoose.connection})
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname+"/build/index.html"));
-});
+// app.get("*", function(req, res) {
+//     res.sendFile(path.join(__dirname+"/build/index.html"));
+// });
 
 app.get("/people", (req,res) => {
     let people = {
@@ -492,6 +492,6 @@ app.post("/create-an-account", (req,res) => {
 
 let port = process.env.PORT;
 
-app.listen(port, () => {
+app.listen(port || 5000, () => {
     console.log("Server has been started successfully " + port);
 });
